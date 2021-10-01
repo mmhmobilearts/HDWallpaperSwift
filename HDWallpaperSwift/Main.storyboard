@@ -13,7 +13,7 @@
         <!--Wallpaper HomeVC-->
         <scene sceneID="Hed-1c-MML">
             <objects>
-                <viewController storyboardIdentifier="Home" id="U5N-gr-weZ" customClass="WallpaperHomeVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="U5N-gr-weZ" customClass="WallpaperHomeVC" customModule="HDWallpaperSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kGf-bd-hxK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
         <!--Wallpaper GalleryVC-->
         <scene sceneID="I2J-QD-ETL">
             <objects>
-                <viewController storyboardIdentifier="Gallery" modalPresentationStyle="fullScreen" id="ncd-9X-Ske" customClass="WallpaperGalleryVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Gallery" modalPresentationStyle="fullScreen" id="ncd-9X-Ske" customClass="WallpaperGalleryVC" customModule="HDWallpaperSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YJb-9P-vVA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
         <!--Wallpaper FavoriteVC-->
         <scene sceneID="3qZ-lw-90s">
             <objects>
-                <viewController storyboardIdentifier="Favorite" modalPresentationStyle="fullScreen" id="LNz-yV-RG0" customClass="WallpaperFavoriteVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Favorite" modalPresentationStyle="fullScreen" id="LNz-yV-RG0" customClass="WallpaperFavoriteVC" customModule="HDWallpaperSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hC3-fz-j4T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +288,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="wallpaper-cell" id="CXX-uM-w2T" customClass="WallpaperCollectionViewCell" customModule="HDWallpaperSwift" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="WallpaperCell" reuseIdentifier="wallpaper-cell" id="CXX-uM-w2T" customClass="WallpaperCollectionViewCell" customModule="HDWallpaperSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sfb-GW-LEP">
