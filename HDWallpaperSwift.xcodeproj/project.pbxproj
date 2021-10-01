@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09D4578AF99E0319A93D443D /* Pods_HDWallpaperSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B127ED9C4AE7995962982106 /* Pods_HDWallpaperSwift.framework */; };
 		D8F65A742701E75800603972 /* HDWallpaperSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F65A662701E75800603972 /* HDWallpaperSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F65A8A2701E88000603972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F65A7D2701E88000603972 /* Assets.xcassets */; };
 		D8F65A8B2701E88000603972 /* HDWallpaperSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8F65A7E2701E88000603972 /* HDWallpaperSwift.xcdatamodeld */; };
@@ -22,9 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A0F15BBB0933C087C826D39 /* Pods-HDWallpaperSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWallpaperSwift.debug.xcconfig"; path = "Target Support Files/Pods-HDWallpaperSwift/Pods-HDWallpaperSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		B127ED9C4AE7995962982106 /* Pods_HDWallpaperSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDWallpaperSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8F00392FCB1611D4CBA674E /* Pods-HDWallpaperSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDWallpaperSwift.release.xcconfig"; path = "Target Support Files/Pods-HDWallpaperSwift/Pods-HDWallpaperSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D8F65A632701E75800603972 /* HDWallpaperSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HDWallpaperSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F65A662701E75800603972 /* HDWallpaperSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDWallpaperSwift.h; sourceTree = "<group>"; };
 		D8F65A672701E75800603972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,26 +41,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09D4578AF99E0319A93D443D /* Pods_HDWallpaperSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95D3C73B3CCC9D0BBAE88578 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B127ED9C4AE7995962982106 /* Pods_HDWallpaperSwift.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C49889DC107FC08DC983BA27 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2A0F15BBB0933C087C826D39 /* Pods-HDWallpaperSwift.debug.xcconfig */,
-				D8F00392FCB1611D4CBA674E /* Pods-HDWallpaperSwift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -75,7 +60,6 @@
 				D8F65A652701E75800603972 /* HDWallpaperSwift */,
 				D8F65A642701E75800603972 /* Products */,
 				C49889DC107FC08DC983BA27 /* Pods */,
-				95D3C73B3CCC9D0BBAE88578 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,7 +124,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8F65A772701E75800603972 /* Build configuration list for PBXNativeTarget "HDWallpaperSwift" */;
 			buildPhases = (
-				2B1E5FE5E2A67D0C77CD4B78 /* [CP] Check Pods Manifest.lock */,
 				D8F65A5E2701E75800603972 /* Headers */,
 				D8F65A5F2701E75800603972 /* Sources */,
 				D8F65A602701E75800603972 /* Frameworks */,
@@ -200,31 +183,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2B1E5FE5E2A67D0C77CD4B78 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HDWallpaperSwift-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8F65A5F2701E75800603972 /* Sources */ = {
@@ -367,7 +325,6 @@
 		};
 		D8F65A782701E75800603972 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A0F15BBB0933C087C826D39 /* Pods-HDWallpaperSwift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -393,7 +350,6 @@
 		};
 		D8F65A792701E75800603972 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8F00392FCB1611D4CBA674E /* Pods-HDWallpaperSwift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

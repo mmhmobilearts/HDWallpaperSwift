@@ -18,6 +18,7 @@ Pod::Spec.new do |spec|
   spec.framework = 'UIKit'
   spec.dependency 'PinterestLayout'
   spec.source_files  = "HDWallpaperSwift/**/*.{swift}"
+  spec.resources = "HDWallpaperSwift/**/*.{storyboard,xib,xcassets,lproj,png}"
   spec.swift_version = '5'
   spec.ios.deployment_target = '14.0'
 
