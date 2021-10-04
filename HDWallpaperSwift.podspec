@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios
   spec.name         = "HDWallpaperSwift"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.requires_arc = true
   spec.summary      = "A short description of HDWallpaperSwift."
   spec.description  = <<-DESC
@@ -16,7 +16,6 @@ Pod::Spec.new do |spec|
     :tag => spec.version.to_s 
   }
   spec.framework = 'UIKit'
-  spec.dependency 'PinterestLayout'
   spec.source_files  = "HDWallpaperSwift/**/*.{swift}"
   spec.resources = "HDWallpaperSwift/**/*.{storyboard,xib,xcassets,lproj,png}"
   spec.swift_version = '5'

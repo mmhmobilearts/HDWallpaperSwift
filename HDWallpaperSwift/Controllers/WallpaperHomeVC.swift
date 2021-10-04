@@ -10,7 +10,6 @@
 import UIKit
 import Photos
 import PhotosUI
-import PinterestLayout
 
 class WallpaperHomeVC: UIViewController
 {
@@ -41,10 +40,10 @@ class WallpaperHomeVC: UIViewController
     
     func setupCollectionView()
     {
-        let layout = PinterestLayout()
-        layout.delegate = self
-        layout.cellPadding = 5
-        layout.numberOfColumns = 2
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        let width = (self.view.frame.size.width - 3*10)/2
+        layout.itemSize = CGSize(width: width, height: width*2)
         self.collectionView.collectionViewLayout = layout
         let nib = UINib(nibName: "WallpaperCollectionViewCell", bundle:nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "wallpaper-cell")
@@ -199,7 +198,7 @@ extension WallpaperHomeVC: UICollectionViewDelegate
     }
 }
 
-extension WallpaperHomeVC: PinterestLayoutDelegate {
+/*extension WallpaperHomeVC: PinterestLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView,
                         heightForImageAtIndexPath indexPath: IndexPath,
@@ -218,7 +217,7 @@ extension WallpaperHomeVC: PinterestLayoutDelegate {
     {
         return 0
     }
-}
+}*/
 
 extension CGFloat {
     static func random() -> CGFloat {
