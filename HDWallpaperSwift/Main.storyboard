@@ -38,7 +38,7 @@
                                             <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
-                                            <segue destination="LNz-yV-RG0" kind="presentation" id="dYE-MD-oII"/>
+                                            <segue destination="LNz-yV-RG0" kind="presentation" identifier="favorite" id="dYE-MD-oII"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,40 +75,6 @@
                                     <outlet property="delegate" destination="U5N-gr-weZ" id="idq-ON-jJL"/>
                                 </connections>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maJ-bV-zES">
-                                <rect key="frame" x="87" y="792" width="240" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8V-Pu-CqX">
-                                        <rect key="frame" x="5" y="5" width="230" height="40"/>
-                                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="openWebView:" destination="U5N-gr-weZ" eventType="touchUpInside" id="Hmr-bW-f7l"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="w8V-Pu-CqX" firstAttribute="leading" secondItem="maJ-bV-zES" secondAttribute="leading" constant="5" id="2cT-83-I6M"/>
-                                    <constraint firstItem="w8V-Pu-CqX" firstAttribute="top" secondItem="maJ-bV-zES" secondAttribute="top" constant="5" id="Mgp-mo-kv0"/>
-                                    <constraint firstAttribute="height" constant="50" id="Uir-ce-tZ8"/>
-                                    <constraint firstAttribute="bottom" secondItem="w8V-Pu-CqX" secondAttribute="bottom" constant="5" id="XFK-EB-CPw"/>
-                                    <constraint firstAttribute="trailing" secondItem="w8V-Pu-CqX" secondAttribute="trailing" constant="5" id="cJB-B2-vIV"/>
-                                    <constraint firstAttribute="width" constant="240" id="tiw-Ha-ebT"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32f-0p-88I">
                                 <rect key="frame" x="0.0" y="862" width="414" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -123,11 +89,9 @@
                             <constraint firstItem="Jy9-qp-7fw" firstAttribute="top" secondItem="kGf-bd-hxK" secondAttribute="top" id="1EM-Eg-1EW"/>
                             <constraint firstItem="Jy9-qp-7fw" firstAttribute="leading" secondItem="7ai-2G-oxW" secondAttribute="leading" id="1Mz-PA-G1i"/>
                             <constraint firstItem="7ai-2G-oxW" firstAttribute="trailing" secondItem="32f-0p-88I" secondAttribute="trailing" id="73W-ci-A6H"/>
-                            <constraint firstItem="maJ-bV-zES" firstAttribute="centerX" secondItem="7ai-2G-oxW" secondAttribute="centerX" id="7i2-cK-43h"/>
                             <constraint firstItem="32f-0p-88I" firstAttribute="bottom" secondItem="7ai-2G-oxW" secondAttribute="bottom" id="GJP-gD-HgN"/>
                             <constraint firstItem="vEd-E2-boO" firstAttribute="leading" secondItem="7ai-2G-oxW" secondAttribute="leading" id="MBS-mX-b0P"/>
                             <constraint firstItem="7ai-2G-oxW" firstAttribute="bottom" secondItem="vEd-E2-boO" secondAttribute="bottom" id="S9v-Dz-8L8"/>
-                            <constraint firstItem="7ai-2G-oxW" firstAttribute="bottom" secondItem="maJ-bV-zES" secondAttribute="bottom" constant="20" id="b78-As-pHs"/>
                             <constraint firstItem="vEd-E2-boO" firstAttribute="top" secondItem="Jy9-qp-7fw" secondAttribute="bottom" id="dfy-wo-zhD"/>
                             <constraint firstItem="32f-0p-88I" firstAttribute="leading" secondItem="7ai-2G-oxW" secondAttribute="leading" id="iCz-Lp-fDk"/>
                             <constraint firstItem="7ai-2G-oxW" firstAttribute="trailing" secondItem="Jy9-qp-7fw" secondAttribute="trailing" id="kcH-2z-afw"/>
@@ -136,8 +100,6 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="vEd-E2-boO" id="Q4T-XR-O4M"/>
-                        <outlet property="portalBtn" destination="w8V-Pu-CqX" id="Qbn-Zt-fws"/>
-                        <outlet property="vwPortal" destination="maJ-bV-zES" id="xoz-Gx-Bi9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="612-rC-DpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

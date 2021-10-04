@@ -47,19 +47,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C49889DC107FC08DC983BA27 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D8F65A592701E75800603972 = {
 			isa = PBXGroup;
 			children = (
 				D8F65A652701E75800603972 /* HDWallpaperSwift */,
 				D8F65A642701E75800603972 /* Products */,
-				C49889DC107FC08DC983BA27 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};

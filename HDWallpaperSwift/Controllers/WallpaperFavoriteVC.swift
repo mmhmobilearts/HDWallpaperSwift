@@ -221,24 +221,3 @@ extension WallpaperFavoriteVC : UICollectionViewDataSource
         return cell
     }
 }
-
-/*extension WallpaperFavoriteVC: PinterestLayoutDelegate {
-    
-    func collectionView(collectionView: UICollectionView,
-                        heightForImageAtIndexPath indexPath: IndexPath,
-                        withWidth: CGFloat) -> CGFloat
-    {
-        let item = self.favorites[indexPath.row]
-
-        let height = CGFloat(item["height"] as! Int)
-
-        return height
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-                        heightForAnnotationAtIndexPath indexPath: IndexPath,
-                        withWidth: CGFloat) -> CGFloat
-    {
-        return 0
-    }
-}*/

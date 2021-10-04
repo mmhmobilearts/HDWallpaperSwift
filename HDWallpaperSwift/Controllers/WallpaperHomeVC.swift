@@ -11,14 +11,14 @@ import UIKit
 import Photos
 import PhotosUI
 
-class WallpaperHomeVC: UIViewController
+public class WallpaperHomeVC: UIViewController
 {
     @IBOutlet weak private var collectionView: UICollectionView!
     
-    var addressURL = ""
+    public var addressURL = ""
     var array = [[String: Any]]()
     
-    override func viewDidLoad()
+    public override func viewDidLoad()
     {
         super.viewDidLoad()
         setupCollectionView()
@@ -80,16 +80,27 @@ class WallpaperHomeVC: UIViewController
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "favorite"
+        {
+            if let nextViewController = segue.destination as? WallpaperFavoriteVC
+            {
+                nextViewController.addressURL = self.addressURL
+            }
+        }
+    }
 }
 
 extension WallpaperHomeVC: UICollectionViewDataSource
 {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.array.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell : WallpaperCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "wallpaper-cell", for: indexPath) as! WallpaperCollectionViewCell
 
@@ -187,7 +198,7 @@ extension WallpaperHomeVC: UICollectionViewDataSource
 
 extension WallpaperHomeVC: UICollectionViewDelegate
 {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let item = self.array[indexPath.row]
         let bundle = Bundle(for: type(of:self))
@@ -197,27 +208,6 @@ extension WallpaperHomeVC: UICollectionViewDelegate
         self.present(objVC, animated: true, completion: nil)
     }
 }
-
-/*extension WallpaperHomeVC: PinterestLayoutDelegate {
-    
-    func collectionView(collectionView: UICollectionView,
-                        heightForImageAtIndexPath indexPath: IndexPath,
-                        withWidth: CGFloat) -> CGFloat
-    {
-        let item = self.array[indexPath.row] 
-
-        let height = CGFloat(item["height"] as! Int)
-
-        return height
-    }
-    
-    func collectionView(collectionView: UICollectionView,
-                        heightForAnnotationAtIndexPath indexPath: IndexPath,
-                        withWidth: CGFloat) -> CGFloat
-    {
-        return 0
-    }
-}*/
 
 extension CGFloat {
     static func random() -> CGFloat {

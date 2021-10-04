@@ -83,92 +83,12 @@ class WallpaperGalleryVC: UIViewController, UIScrollViewDelegate
             }
         }
         
-        //let count = scrollView.subviews.count
-        //scrollView.contentSize = CGSize(width: view.frame.width*CGFloat(count), height: view.frame.height)
         scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
-        //livePhotoView = UIImageView(frame: view.frame)
-        //scrollView.addSubview(livePhotoView)
-        //loadLivePhoto()
     }
-    
-    /// Load live photos
-    /*private func loadLivePhoto()
-    {
-        /*guard let photoURL = Bundle.main.url(forResource: "\(currentWallpaper)", withExtension: "JPG"),
-            let liveURL = Bundle.main.url(forResource: "\(currentWallpaper)", withExtension: "MOV")
-        else { return }
-        manager.loadLivePhoto(photoURL: photoURL, videoURL: liveURL) { (livePhoto) in
-            DispatchQueue.main.async {
-                LoadingView.removeLoadingView()
-                if let photo = livePhoto {
-                    self.livePhotoView.frame = CGRect(x: self.scrollView.contentOffset.x, y: 0, width: self.livePhotoView.frame.width, height: self.livePhotoView.frame.height)
-                    //self.livePhotoView.livePhoto = photo
-                    //self.livePhotoView.startPlayback(with: .full)
-                }
-            }
-        }*/
-        self.livePhotoView.frame = CGRect(x: self.scrollView.contentOffset.x, y: 0, width: self.livePhotoView.frame.width, height: self.livePhotoView.frame.height)
-        //self.livePhotoView.image = currentWallpaper
-        
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        if let dirPath = paths.first as NSString?
-        {
-            let folderPath = dirPath.appendingPathComponent("images") as NSString?
-            if !FileManager.default.fileExists(atPath: folderPath! as String)
-            {
-                try! FileManager.default.createDirectory(atPath: folderPath! as String, withIntermediateDirectories: true, attributes: nil)
-            }
-            let title = currentWallpaper["title"] as? String
-            let thumbnail = currentWallpaper["name"] as? String
-            let filePath = folderPath!.appendingPathComponent(title!)
-            if (FileManager.default.fileExists(atPath: filePath))
-            {
-                self.loader.isHidden = true
-                self.livePhotoView.image = UIImage(contentsOfFile: filePath)
-            }
-            else
-            {
-                DispatchQueue.global().async {
-                    let storage = Storage.storage()
-                    let pathReference = storage.reference(withPath: "image/\(thumbnail ?? "")")
-                    pathReference.getData(maxSize: 5 * 1024 * 1024) { data, error in
-                        if data != nil
-                        {
-                            FileManager.default.createFile(atPath: filePath as String, contents: data! as Data, attributes: nil)
-                            if let image = UIImage(data: data! as Data) {
-                                DispatchQueue.main.async {
-                                    self.loader.isHidden = true
-                                    self.livePhotoView.image = image
-                                }
-                            }
-                        }
-                    }
-                    
-                }
-            }
-        }
-    }*/
     
     /// Save current live wallpaper to the gallery
     private func saveCurrentLiveWallpaper()
     {
-        /*guard let photoURL = Bundle.main.url(forResource: "\(currentWallpaperIndex)", withExtension: "JPG"),
-            let liveURL = Bundle.main.url(forResource: "\(currentWallpaperIndex)", withExtension: "MOV") else { return }
-        manager.saveLivePhoto(photoURL: photoURL, videoURL: liveURL) { (success) in
-            DispatchQueue.main.async {
-                LoadingView.removeLoadingView()
-                if success
-                {
-                    self.presentLivePhotoSavedAlert()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0)
-                    {
-                        self.showAd()
-                    }
-                }
-                else { self.presentGenericErrorAlert() }
-            }
-        }*/
-        
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         if let dirPath = paths.first as NSString?
         {
