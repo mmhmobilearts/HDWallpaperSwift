@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jy9-qp-7fw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLh-9y-Kig">
-                                        <rect key="frame" x="179" y="88" width="56" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HD Wallpaper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLh-9y-Kig">
+                                        <rect key="frame" x="143" y="28" width="128.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkl-bt-rB4">
-                                        <rect key="frame" x="348" y="75" width="50" height="50"/>
+                                        <rect key="frame" x="348" y="15" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="c9r-YX-LQt"/>
                                             <constraint firstAttribute="width" constant="50" id="nNM-Wc-FTk"/>
@@ -44,7 +44,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="AyH-4Q-XYU"/>
+                                    <constraint firstAttribute="height" constant="60" id="AyH-4Q-XYU"/>
                                     <constraint firstAttribute="bottom" secondItem="SLh-9y-Kig" secondAttribute="bottom" constant="8" id="CpQ-nY-poD"/>
                                     <constraint firstAttribute="trailing" secondItem="Kkl-bt-rB4" secondAttribute="trailing" constant="16" id="MNz-Gs-Fsm"/>
                                     <constraint firstItem="Kkl-bt-rB4" firstAttribute="centerY" secondItem="SLh-9y-Kig" secondAttribute="centerY" id="Stu-NH-6W0"/>
@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vEd-E2-boO">
-                                <rect key="frame" x="0.0" y="164" width="414" height="698"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JgP-Ez-yof">
                                     <size key="itemSize" width="128" height="128"/>

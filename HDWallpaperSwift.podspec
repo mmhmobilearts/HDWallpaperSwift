@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios
   spec.name         = "HDWallpaperSwift"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.requires_arc = true
   spec.summary      = "A short description of HDWallpaperSwift."
   spec.description  = <<-DESC
