@@ -58,8 +58,8 @@ class WallpaperGalleryVC: UIViewController, UIScrollViewDelegate
             {
                 try! FileManager.default.createDirectory(atPath: folderPath! as String, withIntermediateDirectories: true, attributes: nil)
             }
-            let thumbnail = currentWallpaper["title"] as? String
-            let filePath = folderPath!.appendingPathComponent(thumbnail!)
+            let title = currentWallpaper["title"] as? String
+            let filePath = folderPath!.appendingPathComponent(title!)
             if (FileManager.default.fileExists(atPath: filePath))
             {
                 self.loader.isHidden = true
@@ -69,6 +69,7 @@ class WallpaperGalleryVC: UIViewController, UIScrollViewDelegate
             {
                 DispatchQueue.global().async
                 {
+                    let thumbnail = self.currentWallpaper["thumbnail"] as? String
                     let url:NSURL = NSURL(string: thumbnail!)!
                     if let data:NSData = try? Data(contentsOf: url as URL) as NSData {
                         FileManager.default.createFile(atPath: filePath as String, contents: data as Data, attributes: nil)
@@ -97,8 +98,8 @@ class WallpaperGalleryVC: UIViewController, UIScrollViewDelegate
             {
                 try! FileManager.default.createDirectory(atPath: folderPath! as String, withIntermediateDirectories: true, attributes: nil)
             }
-            let thumbnail = currentWallpaper["title"] as! String
-            let filePath = folderPath!.appendingPathComponent(thumbnail)
+            let title = currentWallpaper["title"] as! String
+            let filePath = folderPath!.appendingPathComponent(title)
             if (FileManager.default.fileExists(atPath: filePath))
             {
                 UIImageWriteToSavedPhotosAlbum(UIImage(contentsOfFile: filePath)!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)

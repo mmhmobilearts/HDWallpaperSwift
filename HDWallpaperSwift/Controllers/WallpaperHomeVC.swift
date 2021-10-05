@@ -45,7 +45,8 @@ public class WallpaperHomeVC: UIViewController
         let width = (self.view.frame.size.width - 3*10)/2
         layout.itemSize = CGSize(width: width, height: width*2)
         self.collectionView.collectionViewLayout = layout
-        let nib = UINib(nibName: "WallpaperCollectionViewCell", bundle:nil)
+        let bundle = Bundle(for: type(of:self))
+        let nib = UINib(nibName: "WallpaperCollectionViewCell", bundle:bundle)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "wallpaper-cell")
         
         self.getPhotos()
@@ -129,8 +130,8 @@ extension WallpaperHomeVC: UICollectionViewDataSource
             {
                 try! FileManager.default.createDirectory(atPath: folderPath! as String, withIntermediateDirectories: true, attributes: nil)
             }
-            let thumbnail = item["title"] as! String
-            let filePath = folderPath!.appendingPathComponent(thumbnail)
+            let title = item["title"] as! String
+            let filePath = folderPath!.appendingPathComponent(title)
             if (FileManager.default.fileExists(atPath: filePath))
             {
                 cell.imageView.image = UIImage(contentsOfFile: filePath)
@@ -138,6 +139,7 @@ extension WallpaperHomeVC: UICollectionViewDataSource
             else
             {
                 DispatchQueue.global().async {
+                    let thumbnail = item["thumbnail"] as! String
                     let url:NSURL = NSURL(string: thumbnail)!
                     if let data:NSData = try? Data(contentsOf: url as URL) as NSData {
                         FileManager.default.createFile(atPath: filePath as String, contents: data as Data, attributes: nil)
@@ -173,8 +175,8 @@ extension WallpaperHomeVC: UICollectionViewDataSource
             {
                 try! FileManager.default.createDirectory(atPath: folderPath! as String, withIntermediateDirectories: true, attributes: nil)
             }
-            let thumbnail = item["title"] as! String
-            let filePath = folderPath!.appendingPathComponent(thumbnail)
+            let title = item["title"] as! String
+            let filePath = folderPath!.appendingPathComponent(title)
             if (FileManager.default.fileExists(atPath: filePath))
             {
                 UIImageWriteToSavedPhotosAlbum(UIImage(contentsOfFile: filePath)!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
@@ -203,7 +205,7 @@ extension WallpaperHomeVC: UICollectionViewDelegate
         let item = self.array[indexPath.row]
         let bundle = Bundle(for: type(of:self))
         let storyBoard = UIStoryboard(name: "Main", bundle: bundle)
-        let objVC = storyBoard.instantiateViewController(withIdentifier: "GalleryVC") as! WallpaperGalleryVC
+        let objVC = storyBoard.instantiateViewController(withIdentifier: "Gallery") as! WallpaperGalleryVC
         objVC.currentWallpaper = item
         self.present(objVC, animated: true, completion: nil)
     }
